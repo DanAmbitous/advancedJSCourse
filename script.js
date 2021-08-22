@@ -1,5 +1,30 @@
-function removeDups(array) {
-  return [...new Set(array)]
+function* idGenerator() {
+  let counter = 1
+
+  yield 0
+  yield 1
+
+  while (true) {
+    counter += 1
+
+    const result = counter
+    yield result
+  }
 }
 
-removeDups([1, 2, 3, 4, 3, 2, 5])
+const generator = idGenerator()
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
+console.log(generator.next())
