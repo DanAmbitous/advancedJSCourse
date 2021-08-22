@@ -1,35 +1,21 @@
-const items = [
-  {
-    id: 1,
-    name: "test1",
-    description: "desc1",
-  },
-  {
-    id: 2,
-    name: "test2",
-    description: "desc2",
-  },
-  {
-    id: 3,
-    name: "test3",
-    description: "desc3",
-  },
-]
+function removeDups(array) {
+  let tracker = {}
 
-const map1 = new Map([])
+  console.log(array)
 
-map1.set(1, {
-  id: 1,
-  name: "test1",
-  description: "desc1",
-})
-map1.set(2, {
-  id: 2,
-  name: "test2",
-  description: "desc2",
-})
-map1.set(3, {
-  id: 3,
-  name: "test3",
-  description: "desc3",
-})
+  array.forEach((element) => {
+    tracker[element] = element
+  })
+
+  console.log(tracker)
+
+  array.length = ""
+
+  for (const [key, value] of Object.entries(tracker)) {
+    array.push(Number(key))
+  }
+
+  console.log(array)
+}
+
+removeDups([1, 2, 3, 4, 3, 2, 5])
