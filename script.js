@@ -1,30 +1,25 @@
-function* idGenerator() {
-  let counter = 1
-
-  yield 0
-  yield 1
-
-  while (true) {
-    counter += 1
-
-    const result = counter
-    yield result
-  }
+const array = ["a", "b", "c", "d"]
+const person = {
+  name: "Kyle",
+  age: 12,
+  favoriteFood: "rice",
+  address: {
+    street: "123 main st",
+    apartment: {
+      room: "ICXVII",
+    },
+    city: "somewhere",
+  },
+  zipcode: 12341,
 }
 
-const generator = idGenerator()
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
-console.log(generator.next())
+const {
+  name: personsName,
+  age,
+  address: {
+    apartment: { room },
+  },
+  zipcode = 12312,
+} = person
+
+console.log(personsName, age, room, zipcode)
