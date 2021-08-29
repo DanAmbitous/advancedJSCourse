@@ -13,13 +13,10 @@ const person = {
   zipcode: 12341,
 }
 
-const {
-  name: personsName,
-  age,
-  address: {
-    apartment: { room },
-  },
-  zipcode = 12312,
-} = person
+function addAndMulit({ a, b = 12 }) {
+  return ([sum, product] = [a + b, a * b])
+}
 
-console.log(personsName, age, room, zipcode)
+const result = addAndMulit({ a: 5 })
+
+console.log(result)
