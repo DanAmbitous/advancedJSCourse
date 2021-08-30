@@ -1,22 +1,18 @@
 const array = ["a", "b", "c", "d"]
+
 const person = {
   name: "Kyle",
-  age: 12,
-  favoriteFood: "rice",
+  age: 25,
+  favoriteFood: "Rice",
   address: {
-    street: "123 main st",
-    apartment: {
-      room: "ICXVII",
-    },
-    city: "somewhere",
+    street: "123 Main St",
+    city: "Somewhere",
+    zipcode: "55555",
   },
-  zipcode: 12341,
 }
 
-function addAndMulit({ a, b = 12 }) {
-  return ([sum, product] = [a + b, a * b])
+function sum(...numberArray) {
+  return numberArray.reduce((sum, number) => (sum += number), 0)
 }
 
-const result = addAndMulit({ a: 5 })
-
-console.log(result)
+console.log(sum(10, 5, 51, 50, 12))
