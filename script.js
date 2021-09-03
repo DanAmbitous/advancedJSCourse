@@ -1,18 +1,13 @@
-const array = ["a", "b", "c", "d"]
-
 const person = {
-  name: "Kyle",
-  age: 25,
-  favoriteFood: "Rice",
-  address: {
-    street: "123 Main St",
-    city: "Somewhere",
-    zipcode: "55555",
+  _username: "Player 80100",
+  get username() {
+    return this._username
+  },
+  set username(value) {
+    if (value.length >= 5) this._username = value
   },
 }
 
-function sum(...numberArray) {
-  return numberArray.reduce((sum, number) => (sum += number), 0)
-}
+person.username = "DanAstonshing"
 
-console.log(sum(10, 5, 51, 50, 12))
+console.log(person.username)
