@@ -1,21 +1,12 @@
+window.name = "Global Name"
+
 const person = {
-  _username: "Player 80100",
-  _password: Math.floor(Math.random() * 100000),
-  get username() {
-    return this._username
-  },
-  set username(value) {
-    if (value.length >= 5) this._username = value
-  },
-  get password() {
-    return this._password
-  },
-  set password(password) {
-    if (password.length >= 5) this._password = password
-  },
+  name: "Dan",
 }
 
-person.username = "DanAstonshing"
-person.password = "123238"
+function printName() {
+  console.log(this.name)
+}
 
-console.log(person.username, person.password)
+const thePerson = printName.bind(person)
+thePerson()
