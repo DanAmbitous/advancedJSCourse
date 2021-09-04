@@ -1,12 +1,7 @@
-window.name = "Global Name"
-
-const person = {
-  name: "Dan",
+function sum(a, c, as, b, d) {
+  return a + c + as + b + d
 }
 
-function printName() {
-  console.log(this.name)
-}
+const sumTwo = sum.bind(null, 5, 10)
 
-const thePerson = printName.bind(person)
-thePerson()
+console.log(sumTwo(52, 5))
